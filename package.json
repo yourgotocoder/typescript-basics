@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "no-typescript.js",
   "devDependencies": {
+    "nodemon": "^2.0.16",
     "typescript": "^4.6.4"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc -w"
   },
   "author": "",
   "license": "ISC",
