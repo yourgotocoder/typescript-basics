@@ -28,3 +28,14 @@ const a = 4;
 const b = 5;
 console.log((0, multiply_1.default)(a, b));
 console.log((0, multiply_1.multiplyBy2)(a, b));
+//
+function capitalize(word) {
+    //using type guard
+    if (word) {
+        return word[0].toUpperCase() + word.substring(1);
+    }
+    else {
+        throw new Error("Null cannot be capitalized");
+    }
+}
+console.log(capitalize("null"));
