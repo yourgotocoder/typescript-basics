@@ -1,7 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.multiply = void 0;
+exports.multiplyBy2 = void 0;
 function multiply(a, b) {
     return a * b;
 }
-exports.multiply = multiply;
+exports.default = multiply;
+function multiplyBy2(a, b) {
+    return 2 * (a * b);
+}
+exports.multiplyBy2 = multiplyBy2;
