@@ -28,7 +28,32 @@ const a = 4;
 const b = 5;
 console.log((0, multiply_1.default)(a, b));
 console.log((0, multiply_1.multiplyBy2)(a, b));
-//
+//Array
+const array = ["x", "y"];
+const genericArray = ["a", "b"]; // both array and genericArray represent the same type
+//Tuple
+const tuple = ["abc", 1]; //It represents a type of array where the number of element is fixed
+//Enum
+var PrimaryColor;
+(function (PrimaryColor) {
+    PrimaryColor["Red"] = "red";
+    PrimaryColor["Green"] = "green";
+    PrimaryColor["Blue"] = "blue";
+})(PrimaryColor || (PrimaryColor = {}));
+let myFavorityColor = PrimaryColor.Green;
+console.log(myFavorityColor); //Enum assigns a number starting from 0, it can be bypassed by giving the first value a starting value
+//or the values can be set manually
+//Any
+/*
+ the any type is used when we don't know the type of the value that will either be returned or used
+*/
+const email = document.getElementById("email");
+if (email) {
+    email.addEventListener("change", (e) => {
+        const input = e.currentTarget;
+        console.log(input.value);
+    });
+}
 function capitalize(word) {
     //using type guard
     if (word) {
