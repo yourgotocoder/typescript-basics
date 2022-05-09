@@ -1,11 +1,10 @@
 {
-  "dependencies": {
-    "typescript": "^4.5.5"
-  },
   "name": "react-typescript",
   "version": "1.0.0",
   "main": "no-typescript.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
