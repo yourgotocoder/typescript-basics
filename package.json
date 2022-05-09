@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "main": "no-typescript.js",
   "devDependencies": {
+    "concurrently": "^7.1.0",
     "nodemon": "^2.0.16",
     "typescript": "^4.6.4"
   },
   "scripts": {
-    "build": "tsc -w"
+    "build": "tsc -w",
+    "start": "concurrently -k -n COMPILER,NODEMON -c yellow,blue \"tsc -w\" \"nodemon -w dist -q dist/index.js\""
   },
   "author": "",
   "license": "ISC",
