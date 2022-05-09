@@ -1,7 +1,6 @@
 "use strict";
-function multiply(a, b) {
-    return a * b;
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+const multiply_1 = require("./multiply");
 const a = 4;
 const b = 5;
-console.log(multiply(a, b));
+console.log((0, multiply_1.multiply)(a, b));

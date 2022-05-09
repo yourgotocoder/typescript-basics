@@ -1,6 +1,4 @@
-function multiply(a: number, b: number) {
-    return a * b;
-}
+import { multiply } from "./multiply";
 
 const a = 4;
 const b = 5;
