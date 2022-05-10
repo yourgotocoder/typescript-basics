@@ -1,16 +1,24 @@
 "use strict";
-let a = { someProp: 4 };
-let b = a;
-const add = (a, b) => a + b;
-const child = { surname: "R" };
-const sum2 = (a, b) => a + (b || 0); //Providing a default value
-function sumEverything(...numbers) {
-    return numbers.reduce((prevValue, currentValue) => prevValue + currentValue);
-}
-console.log(sumEverything(2, 3, 5));
-function calcArea(...args) {
-    if (args.length === 2) {
-        return args[0] * args[1];
+class Robot {
+    constructor(name) {
+        this.name = name;
     }
-    return args[0] * args[0];
+    askName() {
+        console.log(`Hi, my name is ${this.name}`);
+    }
+    move(distance) {
+        console.log(`${this.name} moved by ${distance}`);
+    }
 }
+class FlyingRobot extends Robot {
+    constructor(name, jetPackSize) {
+        super(name);
+        this.jetPackSize = jetPackSize;
+    }
+    move(distance) {
+        console.log(`${this.name} is flying`);
+        super.move(distance);
+    }
+}
+const flyingRobot = new FlyingRobot("Sudu", 24);
+flyingRobot.move(30);

@@ -1,53 +1,32 @@
-interface A {
-    someProp: number;
-}
+class Robot {
+    name: string;
 
-interface B {
-    someProp: number;
-}
-
-let a: A = { someProp: 4 };
-let b: B = a;
-
-//Index signatures
-interface C {
-    [key: string]: number;
-}
-//Call signatures
-interface Sum {
-    (a: number, b: number): number;
-}
-
-const add: Sum = (a, b) => a + b;
-
-//Inheritance
-interface Parent {
-    surname: string;
-}
-
-interface Child extends Parent {}
-
-const child: Child = { surname: "R" };
-//Functions
-type myFunc = (a: number, b?: number) => number;
-const sum2: myFunc = (a, b) => a + (b || 0); //Providing a default value
-
-function sumEverything(...numbers: number[]): number {
-    return numbers.reduce(
-        (prevValue, currentValue) => prevValue + currentValue
-    );
-}
-
-console.log(sumEverything(2, 3, 5));
-
-//Overloads
-
-function calcArea(width: number, height: number): number;
-function calcArea(length: number): number;
-
-function calcArea(...args: number[]): number {
-    if (args.length === 2) {
-        return args[0] * args[1];
+    constructor(name: string) {
+        this.name = name;
     }
-    return args[0] * args[0];
+
+    askName() {
+        console.log(`Hi, my name is ${this.name}`);
+    }
+
+    move(distance: number) {
+        console.log(`${this.name} moved by ${distance}`);
+    }
 }
+
+class FlyingRobot extends Robot {
+    jetPackSize: number;
+
+    constructor(name: string, jetPackSize: number) {
+        super(name);
+        this.jetPackSize = jetPackSize;
+    }
+
+    move(distance: number) {
+        console.log(`${this.name} is flying`);
+        super.move(distance);
+    }
+}
+
+const flyingRobot = new FlyingRobot("Sudu", 24);
+flyingRobot.move(30);
