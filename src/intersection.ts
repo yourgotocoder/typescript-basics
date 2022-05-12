@@ -6,6 +6,16 @@ interface B {
     b: number;
 }
 
-function combine(obj: A & B) {
-    return obj.a + obj.b;
+function combine<ObjA, ObjB>(objA: ObjA, objB: ObjB): ObjA & ObjB {
+    return { ...objA, ...objB };
 }
+
+const a = {
+    a: 1,
+};
+
+const b = {
+    b: 2,
+};
+
+const c = combine(a, b);
