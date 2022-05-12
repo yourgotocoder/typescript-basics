@@ -6,7 +6,10 @@ interface B {
     b: number;
 }
 
-function combine<ObjA, ObjB>(objA: ObjA, objB: ObjB): ObjA & ObjB {
+function combine<ObjA extends object, ObjB extends object>(
+    objA: ObjA,
+    objB: ObjB
+): ObjA & ObjB {
     return { ...objA, ...objB };
 }
 
