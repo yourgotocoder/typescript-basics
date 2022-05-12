@@ -18,6 +18,7 @@ interface Dog {
 }
 
 function isDog(someObj: Dog | Cat): someObj is Dog {
+    //Interface guards
     return (<Dog>someObj).bark !== undefined;
 }
 
@@ -27,5 +28,22 @@ function callMyPet(pet: Dog | Cat) {
         pet.bark();
     } else {
         pet.meow();
+    }
+}
+
+class Foo {
+    foo: number;
+    commonProp: string;
+}
+
+class Bar {
+    bar: number;
+    commonProp: string;
+}
+
+function fooBarFunction(obj: Foo | Bar) {
+    if (obj instanceof Foo) {
+        //Class guards
+        obj.foo;
     }
 }
