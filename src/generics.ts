@@ -27,7 +27,11 @@ interface VanillaCake extends Expirable {}
 const vanillaCakes: VanillaCake[] = [{ expiryDate: new Date() }];
 const chocolateCakes: ChocolateCake[] = [{ expiryDate: new Date() }];
 
-const getExpiredItems = <Item extends Expirable>(items: Array<Item>) => {
+interface GetExpiredItemsFunction {
+    <Item extends Expirable>(item: Array<Item>): Array<Item>;
+}
+
+const getExpiredItems: GetExpiredItemsFunction = (items) => {
     const currentDate = new Date().getTime();
     return items.filter((item) => item.expiryDate.getDate() < currentDate);
 };
