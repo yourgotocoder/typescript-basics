@@ -37,3 +37,24 @@ const getExpiredItems: GetExpiredItemsFunction = (items) => {
 };
 
 const expiredVanillaCakes = getExpiredItems(vanillaCakes);
+
+interface ShoppingCart<Item, ItemId> {
+    items: Array<Item>;
+    addItem(this: ShoppingCart<Item, ItemId>, item: Item): void;
+    getItemById(this: ShoppingCart<Item, ItemId>, id: ItemId): Item | undefined;
+}
+
+interface Item {
+    id: number;
+    price: number;
+}
+
+const cart: ShoppingCart<Item, number> = {
+    items: [],
+    addItem(item) {
+        this.items.push(item);
+    },
+    getItemById(id) {
+        return this.items.find((item) => item.id === id);
+    },
+};
