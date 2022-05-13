@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "no-typescript.js",
   "devDependencies": {
+    "@types/react": "^18.0.9",
     "concurrently": "^7.1.0",
     "nodemon": "^2.0.16",
     "typescript": "^4.6.4"
@@ -13,5 +14,9 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "apollo-client": "^2.6.10",
+    "react": "^18.1.0"
+  }
 }
